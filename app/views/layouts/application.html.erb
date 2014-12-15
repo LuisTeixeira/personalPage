@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PersonalWebPage</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= html_import_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<core-drawer-panel transition id="core_drawer_panel" touch-action>
+  		<section id="section" drawer>
+    		<core-menu selected="0" selectedindex="0" id="core_menu">
+      			<core-submenu opened active id="core_submenu" icon="settings" label="Topics">
+        			<core-item id="core_item" label="Topic 1" horizontal center layout></core-item>
+        			<core-item id="core_item1" label="Topic 2" horizontal center layout></core-item>
+      			</core-submenu>
+      			<core-submenu id="core_submenu1" icon="settings" label="Favorites">
+        			<core-item id="core_item2" label="Favorite 1" horizontal center layout></core-item>
+        			<core-item id="core_item3" label="Favorite 2" horizontal center layout></core-item>
+        			<core-item id="core_item4" label="Favorite 3" horizontal center layout></core-item>
+      			</core-submenu>
+    		</core-menu>
+	  </section>
+	  <section id="section1" main>
+	    <core-header-panel mode="standard" id="core_header_panel">
+	      <core-toolbar id="core_toolbar">
+	        <paper-button id="paper_button">About</paper-button>
+	        <paper-button id="paper_button1">Blog</paper-button>
+	      </core-toolbar>
+	      <section id="section2">
+	      	<%= yield %>
+	      </section>
+	    </core-header-panel>
+	  </section>
+	</core-drawer-panel>
+</body>
+</html>
